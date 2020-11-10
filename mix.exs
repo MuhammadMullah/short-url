@@ -54,7 +54,8 @@ defmodule ShortUrl.MixProject do
       {:credo, "~> 1.5.0-rc.2", only: [:dev, :test], runtime: false},
       {:excoveralls, "~> 0.13.3", only: :test},
       {:ex_machina, "~> 2.4", only: :test},
-      {:faker, "~> 0.16.0", only: :test}
+      {:faker, "~> 0.16.0", only: :test},
+      {:phoenix_live_view, "~> 0.13.3"}
     ]
   end
 

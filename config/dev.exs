@@ -53,6 +53,7 @@ config :short_url, ShortUrlWeb.Endpoint,
       ~r{priv/gettext/.*(po)$},
       ~r{lib/short_url_web/views/.*(ex)$},
       ~r{lib/short_url_web/templates/.*(eex)$}
+      # ~r{lib/my_app_web/live/.*(ex)$}
     ]
   ]
 

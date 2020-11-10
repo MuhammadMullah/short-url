@@ -9,7 +9,7 @@ defmodule ShortUrl.Factory do
   def link_factory do
     %Link{
       original_url: Faker.Internet.domain_name(),
-      generated_url: Faker.String.base64()
+      identifier: Faker.String.base64()
     }
   end
 

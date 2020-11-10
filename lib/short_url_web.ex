@@ -23,6 +23,7 @@ defmodule ShortUrlWeb do
 
       import Plug.Conn
       import ShortUrlWeb.Gettext
+      import Phoenix.LiveView.Controller, only: [live_render: 3]
       alias ShortUrlWeb.Router.Helpers, as: Routes
     end
   end
@@ -42,6 +43,8 @@ defmodule ShortUrlWeb do
       import ShortUrlWeb.ErrorHelpers
       import ShortUrlWeb.Gettext
       alias ShortUrlWeb.Router.Helpers, as: Routes
+
+      import Phoenix.LiveView.Router
     end
   end
 

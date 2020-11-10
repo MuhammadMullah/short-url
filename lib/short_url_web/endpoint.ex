@@ -1,6 +1,8 @@
 defmodule ShortUrlWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :short_url
 
+  socket "/live", Phoenix.LiveView.Socket
+
   socket "/socket", ShortUrlWeb.UserSocket,
     websocket: true,
     longpoll: false

@@ -42,7 +42,7 @@ defmodule ShortUrl.Links do
       iex> get_by_original_url(google.com)
       %Link{}
   """
-  def get_by_original_url(original_url), do: Repo.get_by!(Link, original_url: original_url)
+  def get_by_original_url(original_url), do: Repo.get_by(Link, original_url: original_url)
 
 
   @doc """
@@ -56,9 +56,34 @@ defmodule ShortUrl.Links do
   """
 
   @spec create_link(map) :: {:error, atom | Ecto.Changeset.t()} | {:ok, Link.t()}
-  def create_link(attrs \\ %{}) do
-    %Link{}
-    |> Link.changeset(attrs)
-    |> Repo.insert()
+  def create_link(%{"original_url" => original_url} = attrs \\ %{}) do
+    case get_by_original_url(original_url) do
+      nil ->
+        %Link{}
+        |> Link.changeset(attrs)
+        |> Repo.insert()
+      %Link{} = link ->
+        {:ok, link}
+    end
   end
+
+  @doc """
+  Returns an `%Ecto.Changeset{}` for tracking link changes.
+  ## Examples
+      iex> change_link(link)
+      %Ecto.Changeset{source: %Link{}}
+  """
+  def change_link(%Link{} = link) do
+    Link.changeset(link, %{})
+  end
+
+
+  @doc """
+  Gets a single link by their identifier
+
+  ## Examples
+      iex> get_by_url_identifier("SvS_I3sD")
+      %Link{}
+  """
+  def get_by_url_identifier(identifier), do: Repo.get_by(Link, identifier: identifier)
 end
