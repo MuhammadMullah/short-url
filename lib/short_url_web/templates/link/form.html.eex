@@ -2,5 +2,5 @@
   <label>
     URL: <%= text_input f, :original_url %>
   </label>
-  <%= submit "Submit" %>
+  <%= submit "Submit", class: "bg-orange-800" %>
 <% end %>
