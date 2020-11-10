@@ -27,5 +27,19 @@ defmodule ShortUrl.Links do
   """
 
   @spec get_link(String.t()) :: {:ok, Link.t()} | {:error, String.t()}
-  def get_link(id), do: Repo.get!(Link, id)
+  def get_link(id) do
+    case Repo.get!(Link, id) do
+      nil -> {:error, :not_found}
+      link -> {:ok, link}
+    end
+  end
+
+
+  @doc """
+  Gets a single link by their original url
+  ## Examples
+      iex> get_by_original_url(google.com)
+      %Link{}
+  """
+  def get_by_original_url(original_url), do: Repo.get_by!(Link, original_url: original_url)
 end

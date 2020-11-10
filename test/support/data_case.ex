@@ -22,6 +22,8 @@ defmodule ShortUrl.DataCase do
       import Ecto.Changeset
       import Ecto.Query
       import ShortUrl.DataCase
+
+      import ShortUrl.Factory
     end
   end
 
