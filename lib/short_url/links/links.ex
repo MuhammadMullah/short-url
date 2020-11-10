@@ -26,7 +26,7 @@ defmodule ShortUrl.Links do
   tuple if the given link does not exist
   """
 
-  @spec get_link(String.t()) :: {:ok, Link.t()} | {:error, String.t()}
+  @spec get_link({:id, binary}) :: {:error, :not_found} | {:ok, Link.t()}
   def get_link(id) do
     case Repo.get!(Link, id) do
       nil -> {:error, :not_found}
@@ -37,9 +37,28 @@ defmodule ShortUrl.Links do
 
   @doc """
   Gets a single link by their original url
+
   ## Examples
       iex> get_by_original_url(google.com)
       %Link{}
   """
   def get_by_original_url(original_url), do: Repo.get_by!(Link, original_url: original_url)
+
+
+  @doc """
+  Creates a link.
+
+  ## Examples
+      iex> create_link(%{field: value})
+      {:ok, %Link{}}
+      iex> create_link(%{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+  """
+
+  @spec create_link(map) :: {:error, atom | Ecto.Changeset.t()} | {:ok, Link.t()}
+  def create_link(attrs \\ %{}) do
+    %Link{}
+    |> Link.changeset(attrs)
+    |> Repo.insert()
+  end
 end
