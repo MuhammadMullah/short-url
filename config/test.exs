@@ -11,8 +11,8 @@ config :logger, level: :warn
 
 # Configure your database
 config :short_url, ShortUrl.Repo,
-  username: "postgres",
-  password: "postgres",
-  database: "short_url_test",
-  hostname: "localhost",
+  username: System.get_env("POSTGRES_TEST_USER"),
+  password: System.get_env("POSTGRES_TEST_PASSWORD"),
+  database: System.get_env("POSTGRES_TEST_DATABASE"),
+  hostname: System.get_env("HOST"),
   pool: Ecto.Adapters.SQL.Sandbox

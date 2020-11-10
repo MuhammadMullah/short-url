@@ -13,7 +13,7 @@ config :short_url,
 # Configures the endpoint
 config :short_url, ShortUrlWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "eh7MjqcBsWZz2RK8lWVJYAXeKLycUUljsUqy/8+5UEMMiEwS6RREqXowej974o6g",
+  secret_key_base: System.get_env("SECRET_KEY_BASE"),
   render_errors: [view: ShortUrlWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: ShortUrl.PubSub, adapter: Phoenix.PubSub.PG2]
 
