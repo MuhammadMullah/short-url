@@ -51,7 +51,6 @@ defmodule ShortUrl.MixProject do
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
-
       {:credo, "~> 1.5.0-rc.2", only: [:dev, :test], runtime: false},
       {:excoveralls, "~> 0.13.3", only: :test}
     ]
