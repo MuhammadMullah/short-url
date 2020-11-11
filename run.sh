@@ -23,7 +23,7 @@ fi
 #   sleep 1
 # done
 
-psql -h db -U "postgres" -p "" -c '\q'
+psql -h db -U "postgres"  -c '\q'
 
 # echo "\nPostgres is available: continuing with database setup..."
 

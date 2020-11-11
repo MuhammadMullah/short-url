@@ -1,0 +1,20 @@
+What is Missing.
+
+- Because of time and tight schedule. Trying to deliver on my current engagement,
+  there are a few things that I left although my initial plan was to have them.
+  
+  1. I was intending to use the all time phoenix favourite feature. Phoenix LiveView.
+     I had it configured but Because of time constraints couldn't use it.
+
+  2. I also intended to style my app and make it more appealing using css and tailwind
+     which I had also setup but I found it a bit challenging because of the learning curve
+     and I thought I shouldn't waste time as for now what matters most is the functionality.
+
+
+Improvements.
+
+* Use of GenServers in place of Quantum for caching.
+  - Although caching has been implemented(which is a very important factor when you think about)
+    scalabilty of the app in realtime). I personally feel it can be improved and customized by taking
+    advantage of GenServers
+   

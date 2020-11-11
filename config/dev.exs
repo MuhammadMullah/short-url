@@ -69,9 +69,9 @@ config :phoenix, :plug_init_mode, :runtime
 
 # Configure your database
 config :short_url, ShortUrl.Repo,
-  username: System.get_env("POSTGRES_DEV_USER"),
-  password: System.get_env("POSTGRES_DEV_PASSWORD"),
-  database: System.get_env("POSTGRES_DEV_DATABASE"),
-  hostname: System.get_env("HOST"),
+  username: "postgres",
+  password: "postgres",
+  database: "short_url_dev",
+  hostname: "localhost",
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
