@@ -16,8 +16,9 @@ defmodule ShortUrlWeb.Router do
   scope "/", ShortUrlWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
-    resources "/links", LinkController, only: [:index, :new, :create, :show]
+    get "/", LinkController, :new
+    post "/links/new", LinkController, :create
+    get "/links", LinkController, :index
     get "/:url_identifier", LinkController, :url_identifier
   end
 

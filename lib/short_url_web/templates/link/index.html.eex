@@ -1,0 +1,19 @@
+
+<table id="example2" class="display table" style="width: 100%; cellspacing: 0;">
+  <thead>
+    <tr>
+      <th>Long URL</th>
+      <th>SHRINKED URL</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= for link <- @links do %>
+        <tr>
+          <td><%= link.original_url %></td>
+          <td><%= link "#{@endpoint.url()}/#{link.identifier}", to: "#{@endpoint.url()}/#{link.identifier}" %></td>
+
+        </tr>
+    <% end %>
+  </tbody>
+</table>

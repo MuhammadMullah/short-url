@@ -6,10 +6,11 @@ defmodule ShortUrlWeb.LinkController do
   alias ShortUrl.Links.Link
   alias ShortUrlWeb.Endpoint
 
-
   def index(conn, _) do
     links = Links.list_links()
-    render(conn, "index.html", links: links)
+    endpoint = Endpoint
+    IO.inspect endpoint
+    render(conn, "index.html", links: links, endpoint: endpoint)
   end
 
   @doc """
