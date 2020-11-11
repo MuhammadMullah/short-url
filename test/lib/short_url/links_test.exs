@@ -17,10 +17,15 @@ defmodule ShortUrl.Links.LinksTest do
       assert Links.get_link(link.id) == {:ok, %Link{} = link}
     end
 
+    test "get_by_original_url/1 returns a link with its original_url" do
+      link = insert(:link)
+      assert Links.get_by_original_url(link.original_url) == link
+    end
+
     test "create_link/1 with valid data creates a link" do
       link = insert(:link)
       assert link.original_url == link.original_url
-      assert String.length(link.generated_url) == 8
+      assert String.length(link.identifier) == 8
     end
   end
 end

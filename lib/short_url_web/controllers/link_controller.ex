@@ -9,7 +9,6 @@ defmodule ShortUrlWeb.LinkController do
   def index(conn, _) do
     links = Links.list_links()
     endpoint = Endpoint
-    IO.inspect endpoint
     render(conn, "index.html", links: links, endpoint: endpoint)
   end
 

@@ -23,6 +23,7 @@ defmodule ShortUrlWeb.ConnCase do
 
       # The default endpoint for testing
       @endpoint ShortUrlWeb.Endpoint
+      import ShortUrl.Factory
     end
   end
 
