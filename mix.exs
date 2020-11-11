@@ -51,11 +51,14 @@ defmodule ShortUrl.MixProject do
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
+      {:quantum, "~> 3.3"},
+      {:phoenix_live_view, "~> 0.13.3"},
+
+      # test environment
       {:credo, "~> 1.5.0-rc.2", only: [:dev, :test], runtime: false},
       {:excoveralls, "~> 0.13.3", only: :test},
       {:ex_machina, "~> 2.4", only: :test},
       {:faker, "~> 0.16.0", only: :test},
-      {:phoenix_live_view, "~> 0.13.3"}
     ]
   end
 

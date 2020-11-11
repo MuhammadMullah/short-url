@@ -11,9 +11,10 @@ defmodule ShortUrl.Application do
       # Start the Ecto repository
       ShortUrl.Repo,
       # Start the endpoint when the application starts
-      ShortUrlWeb.Endpoint
+      ShortUrlWeb.Endpoint,
       # Starts a worker by calling: ShortUrl.Worker.start_link(arg)
       # {ShortUrl.Worker, arg},
+      ShortUrl.Scheduler
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

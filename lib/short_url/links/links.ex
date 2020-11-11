@@ -86,4 +86,13 @@ defmodule ShortUrl.Links do
       %Link{}
   """
   def get_by_url_identifier(identifier), do: Repo.get_by(Link, identifier: identifier)
+
+
+
+  @doc """
+    Delete all links that are older than one month
+  """
+  def delete_links_older_than_one_month() do
+    from(l in Link, where: l.created_at < ago(30, "day")) |> Repo.delete_all()
+  end
 end
