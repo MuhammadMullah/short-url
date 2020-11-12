@@ -8,8 +8,8 @@
 # for the first time
 setup:
 				mix deps.get
-				cd assests && npm install
-				source .env
+				cd assets; npm install
+				cd ..
 				mix ecto.setup
 				mix format
 				mix do compile --warnings-as-errors
